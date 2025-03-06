@@ -38,7 +38,7 @@ CREATE TABLE `moviegenre` (
 
 LOCK TABLES `moviegenre` WRITE;
 /*!40000 ALTER TABLE `moviegenre` DISABLE KEYS */;
-INSERT INTO `moviegenre` VALUES (36,10),(36,15),(37,1),(37,12),(37,15);
+INSERT INTO `moviegenre` VALUES (1,36),(1,6),(3,36),(3,5),(5,3),(5,10),(6,8),(6,12),(6,16),(7,1),(7,2),(7,12),(8,3),(8,10),(8,14),(9,3),(9,9),(9,12),(9,16),(10,1),(10,4),(10,5),(10,16),(11,2),(11,5),(11,12),(11,16);
 /*!40000 ALTER TABLE `moviegenre` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-03 21:16:01
+-- Dump completed on 2025-03-04 23:13:41
