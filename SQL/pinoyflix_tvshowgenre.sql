@@ -38,7 +38,7 @@ CREATE TABLE `tvshowgenre` (
 
 LOCK TABLES `tvshowgenre` WRITE;
 /*!40000 ALTER TABLE `tvshowgenre` DISABLE KEYS */;
-INSERT INTO `tvshowgenre` VALUES (9,1),(9,5),(9,8),(9,9),(9,12),(9,16),(10,5),(10,11),(10,13);
+INSERT INTO `tvshowgenre` VALUES (2,3),(2,13),(3,3),(3,4),(3,13),(4,5),(4,15),(4,16),(5,1),(5,8),(5,16),(6,8),(6,9),(6,12),(7,4),(7,5),(7,16),(1,5),(1,8),(1,16),(8,2),(8,5),(8,6);
 /*!40000 ALTER TABLE `tvshowgenre` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-03 21:16:01
+-- Dump completed on 2025-03-04 23:13:41
