@@ -39,7 +39,7 @@ CREATE TABLE `users` (
   KEY `SubscriptionID` (`SubscriptionID`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`PaymentID`) REFERENCES `paymentmethod` (`PaymentID`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`SubscriptionID`) REFERENCES `subscription` (`SubscriptionID`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (7,'Marcus69','123','Marcus Gabriel','Zingapan','marcuzingapan@gmail.com','2025-02-27 23:45:59',NULL,NULL),(8,'dsa','dsa','dsa','dsa','dsa','2025-02-27 23:50:23',NULL,NULL),(9,'Yes','lool','lool','lool','lool','2025-02-27 23:53:26',NULL,NULL),(21,'John','123','John Paul','Calub','johnpaul@gmail.com','2025-03-02 22:09:29',2,4),(25,'Joel','123','Joel','Almadrones','joelalmadrones@gmail.com','2025-03-03 01:34:34',1,1),(30,'Gab','123','Gumana','Kana','gumana@gmail.com','2025-03-03 02:25:17',3,3),(32,'Maj','123','Maj','Majo','maj@gmail.com','2025-03-03 17:13:17',1,1);
+INSERT INTO `users` VALUES (7,'Marcus69','123','Marcus Gabriel','Zingapan','marcuzingapan@gmail.com','2025-02-27 23:45:59',NULL,NULL),(8,'dsa','dsa','dsa','dsa','dsa','2025-02-27 23:50:23',NULL,NULL),(9,'Yes','lool','lool','lool','lool','2025-02-27 23:53:26',NULL,NULL),(40,'Kurt','kurt123','Kurt Justine','Almadrones','almadroneskurt@gmail.com','2025-03-04 21:30:58',3,4),(41,'John','jpcalub','John Paul','Calub','jp.calub@gmail.com','2025-03-04 21:41:47',2,2),(42,'Lance','lancey','Lance Kenneth','Dela Paz','lance.kenneth@outlook.com','2025-03-04 21:42:37',1,3),(43,'Heaven','itaas','Heaven Jameel','Liwanag','Heaven32@yahoo.com','2025-03-04 21:43:28',3,1),(44,'So Hee','12345','So Hee','Han','sohee@yahoo.com.kr','2025-03-04 21:44:08',4,1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-03 21:16:00
+-- Dump completed on 2025-03-04 23:13:41
