@@ -25,18 +25,15 @@ DROP TABLE IF EXISTS `movies`;
 CREATE TABLE `movies` (
   `MovieID` int NOT NULL AUTO_INCREMENT,
   `Title` varchar(255) NOT NULL,
-  `ReleaseDate` date DEFAULT NULL,
+  `ReleaseDate` date NOT NULL,
+  `ReleaseYear` int GENERATED ALWAYS AS (year(`ReleaseDate`)) STORED,
   `ContentRatingID` int DEFAULT NULL,
   `PopularityScore` int DEFAULT NULL,
-  `GenreID` int DEFAULT NULL,
   PRIMARY KEY (`MovieID`),
-  UNIQUE KEY `ReleaseDate` (`ReleaseDate`),
-  UNIQUE KEY `ReleaseDate_2` (`ReleaseDate`),
+  UNIQUE KEY `unique_title_year` (`Title`,`ReleaseYear`),
   KEY `ContentRatingID` (`ContentRatingID`),
-  KEY `fk_Genre` (`GenreID`),
-  CONSTRAINT `fk_Genre` FOREIGN KEY (`GenreID`) REFERENCES `genre` (`GenreID`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `movies_ibfk_1` FOREIGN KEY (`ContentRatingID`) REFERENCES `contentrating` (`ContentRatingID`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +42,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (12,'Avengers','2025-02-28',3,NULL,NULL),(14,'Fortnite Battlepass','2025-02-20',3,NULL,NULL),(21,'dsa','2025-02-05',19,NULL,NULL),(22,'GGS','2025-02-22',21,NULL,NULL),(24,'GGS','2025-02-12',21,NULL,NULL),(26,'YesSir','2025-03-19',3,NULL,NULL),(31,'Avengers','2025-02-02',3,NULL,1),(32,'Fortnite Battlepass','2025-02-10',3,NULL,2),(33,'Yessirrrr','2025-03-29',5,NULL,NULL),(34,'dsadasdasadsa','2025-03-13',5,NULL,NULL),(36,'The Starving Games','2013-01-17',3,1,NULL),(37,'28 Days Later','2002-04-20',4,3,NULL);
+INSERT INTO `movies` (`MovieID`, `Title`, `ReleaseDate`, `ContentRatingID`, `PopularityScore`) VALUES (1,'Titanic 2','2025-03-28',21,-1),(3,'Titanic 2','2023-03-13',5,1),(5,'The Starving Games','2013-11-28',4,2),(6,'28 Days Later','2002-11-01',5,1),(7,'Avengers: Age of Ultron','2015-04-13',3,2),(8,'Superhero Movie','2008-03-28',4,2),(9,'Inception','2010-07-08',3,2),(10,'The Dark Knight','2008-07-14',3,2),(11,'Interstellar','2014-10-26',3,1);
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-03 21:16:02
+-- Dump completed on 2025-03-04 23:13:41
