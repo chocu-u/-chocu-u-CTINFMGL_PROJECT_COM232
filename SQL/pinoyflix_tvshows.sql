@@ -25,16 +25,15 @@ DROP TABLE IF EXISTS `tvshows`;
 CREATE TABLE `tvshows` (
   `ShowID` int NOT NULL AUTO_INCREMENT,
   `Title` varchar(255) NOT NULL,
-  `ReleaseDate` date DEFAULT NULL,
+  `ReleaseDate` date NOT NULL,
+  `ReleaseYear` int GENERATED ALWAYS AS (year(`ReleaseDate`)) STORED,
   `ContentRatingID` int DEFAULT NULL,
   `PopularityScore` int DEFAULT NULL,
-  `GenreID` int DEFAULT NULL,
   PRIMARY KEY (`ShowID`),
+  UNIQUE KEY `unique_tvshow_title_year` (`Title`,`ReleaseYear`),
   KEY `ContentRatingID` (`ContentRatingID`),
-  KEY `fk_Shows__Genre` (`GenreID`),
-  CONSTRAINT `fk_Shows__Genre` FOREIGN KEY (`GenreID`) REFERENCES `genre` (`GenreID`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `tvshows_ibfk_1` FOREIGN KEY (`ContentRatingID`) REFERENCES `contentrating` (`ContentRatingID`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +42,7 @@ CREATE TABLE `tvshows` (
 
 LOCK TABLES `tvshows` WRITE;
 /*!40000 ALTER TABLE `tvshows` DISABLE KEYS */;
-INSERT INTO `tvshows` VALUES (1,'The Walking Dead','2010-10-31',4,42,NULL),(2,'The Big Bang Theory','2007-09-24',5,16,NULL),(3,'Brooklyn Nine Nine','2013-09-17',3,20,NULL),(4,'Squid Game','2021-09-17',3,79,NULL),(5,'Sweethome','2020-12-18',2,15,NULL),(7,'dsa','2025-02-28',2,NULL,NULL),(9,'The Walking Dead','2010-10-31',3,1,NULL),(10,'The Big Bang Theory','2007-09-24',2,1,NULL);
+INSERT INTO `tvshows` (`ShowID`, `Title`, `ReleaseDate`, `ContentRatingID`, `PopularityScore`) VALUES (1,'The Walking Dead','2010-10-31',3,1),(2,'The Big Bang Theory','2007-09-24',3,1),(3,'Brooklyn Nine-Nine','2013-09-17',3,2),(4,'Squid Game','2021-09-17',4,2),(5,'Sweet Home','2020-12-18',4,NULL),(6,'Stranger Things','2016-07-15',3,1),(7,'Breaking Bad','2008-01-20',4,2),(8,'Game of Thrones','2011-04-17',5,2);
 /*!40000 ALTER TABLE `tvshows` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-03 21:16:00
+-- Dump completed on 2025-03-04 23:13:41
