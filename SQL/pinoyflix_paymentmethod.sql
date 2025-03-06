@@ -35,7 +35,7 @@ CREATE TABLE `paymentmethod` (
 
 LOCK TABLES `paymentmethod` WRITE;
 /*!40000 ALTER TABLE `paymentmethod` DISABLE KEYS */;
-INSERT INTO `paymentmethod` VALUES (1,'Card'),(2,'Gcash'),(3,'Maya'),(4,'PayPal'),(5,'Bitcoin'),(6,'YESSRIR');
+INSERT INTO `paymentmethod` VALUES (1,'Card'),(2,'Gcash'),(3,'Maya'),(4,'PayPal');
 /*!40000 ALTER TABLE `paymentmethod` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-03 21:16:01
+-- Dump completed on 2025-03-04 23:13:40
